@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "94bf3426-6f20-4eff-94f2-86585e30f130",
+		"name": "Test NET Development",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - Testing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?> \r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"> \r\n    <soap:Body> \r\n        <Test xmlns=\"http://tempuri.org/\"> \r\n            <s>Validando Servicio</s>\r\n        </Test>\r\n    </soap:Body> \r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5240/EnrollmentService.asmx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5240",
+					"path": [
+						"EnrollmentService.asmx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - Proceso Inscipcion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?> \r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"> \r\n    <soap:Body> \r\n        <EnrollmentProcess xmlns=\"http://tempuri.org/\"> \r\n            <request>\r\n                <NoExpediente>EXP-20220001</NoExpediente>\r\n                <Ciclo>2022</Ciclo>\r\n                <MesInicioPago>2</MesInicioPago>\r\n                <CarreraId>460686D7-495C-4460-8A2D-4122A8F876F7</CarreraId>\r\n            </request>\r\n        </EnrollmentProcess>\r\n    </soap:Body> \r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5240/EnrollmentService.asmx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5240",
+					"path": [
+						"EnrollmentService.asmx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
